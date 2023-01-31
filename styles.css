@@ -1,8 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    transition: all 600ms ease;
 }
-
+body {
+    scroll-behavior: smooth;
+}
 header {
     z-index: 10000;
 }
@@ -10,8 +13,55 @@ header {
 #title {
     font-size: 1rem;
 }
+/*  TRANSPARENT border to avoid content hoping when hovering
+    smooth animation that sits in drawing the object
+    */
+.price-tag:hover {
+    transform: scale(85%);
+}
+.zoom-img {
+    opacity: 0.8;
+}
+
+/* ZOOM effect for product img when hovering */
+.zoom-img:hover {
+    opacity: 1;
+    transform: translateY(-8%);
+    cursor: pointer;
+}
+
+/* WHEN img hover is active, I NEED to change body
+    opacity to 50% except for the hovered img!
+if img-hover==true {
+    body {opacity: 0.5;}
+}
+else
+
+*/
+#add-to-cart:hover {
+    transition-delay: 100ms;
+    transform: scale(1.2);  
+}
+
+#features, #video-container {
+    margin: 0 auto;
+}
+
+#best-sellers {
+    cursor: pointer;
+}
 
 footer div a {
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 752px) {
+    #hide-when-small {
+        display: none;
+    }
+
+    .navbar-brand img {
+        width: 45px;
+    }
 }
